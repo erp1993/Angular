@@ -1,0 +1,12 @@
+<div class="component">
+    <div class="row">
+        <div class="col-xs-12 col-md-3">
+            <p 
+                [ngStyle]="{backgroundColor: getColor()}"
+                [ngClass]="{online: serverStatus === 'online', offline: serverStatus === 'offline'}"
+            >
+                Server with ID {{ serverId }} is {{ getServerStatus() }}
+            </p>
+        </div>
+    </div>
+</div>
