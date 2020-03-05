@@ -1,19 +1,15 @@
-import { Component, ViewChild, ElementRef } from '@angular/core'
-import { Ingredient } from '../shared/ingredient.model'
+import { Component } from '@angular/core'
+import { ShoppingListService } from './shopping-list.service'
 
 @Component({
     selector: 'app-shopping-list',
     templateUrl: './shopping-list.component.html'
 })
 export class ShoppingListComponent {
-    
-    ingredients: Ingredient[] = [
-        new Ingredient("Apple", 5),
-        new Ingredient("Banana", 10),
-        new Ingredient("Tomato", 10)
-    ];
+    shoppingListService: ShoppingListService;
 
-    constructor(){}
-
+    constructor(shoppingListService: ShoppingListService){
+        this.shoppingListService = shoppingListService;
+    }
     
 }
