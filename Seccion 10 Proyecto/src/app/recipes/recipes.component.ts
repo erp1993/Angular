@@ -4,7 +4,8 @@ import { Recipe } from './recipe.model';
 
 @Component({
     selector: 'app-recipes',
-    templateUrl: './recipes.component.html'
+    templateUrl: './recipes.component.html',
+    providers: [RecipesService]
 })
 export class RecipesComponent implements OnInit{
     recipesService: RecipesService;
@@ -16,7 +17,9 @@ export class RecipesComponent implements OnInit{
 
     ngOnInit(){
         this.recipesService.recipeListSelected.subscribe(
-            (recipe: Recipe) => this.recipeSelected = recipe
+            (recipe: Recipe) => {
+                this.recipeSelected = recipe;
+            }
         )
     }
     
